@@ -1,25 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./globals.css";
+
+import Header from "./header";
+import TopCardList from "./top-card-list";
+import Overview from "./overview";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  const [checked, setChecked] = useState(false);
+
+  function changeMedia(mq) {
+    setDarkMode(mq.matches);
+    setChecked(mq.matches);
+  }
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    mq.addListener(changeMedia);
+    setDarkMode(mq.matches);
+    setChecked(mq.matches);
+  }, []);
+  // le pasamos ref cuando queremos ejecutar useEffect  cuando cambie el estado de ref
+  // si ref cambia ejecutamos lo que está en el hook
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main
+      className={`${darkMode === true ? "is-dark-mode" : "is-light-mode"} `}
+    >
+      <Header
+        setDarkMode={setDarkMode}
+        checked={checked}
+        setChecked={setChecked}
+      />
+      <TopCardList />
+      <Overview />
+    </main>
   );
 }
 

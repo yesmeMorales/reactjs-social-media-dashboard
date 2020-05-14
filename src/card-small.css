@@ -1,0 +1,61 @@
+.card-small {
+  /* border: 1px solid blue; */
+  display: grid;
+  /*Crear columnas de un grid*/
+  grid-template-columns: 1fr 1fr;
+  /*Espacidado del grid entre cada fila*/
+  row-gap: 1em;
+  background: var(--grayCard);
+  border-radius: 8px;
+  padding: 1.7em;
+}
+
+.card-small p {
+  margin: 0;
+}
+
+.card-small-views {
+  /* border: 1px solid rgb(255, 0, 255); */
+  color: var(--gray);
+  font-weight: bold;
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+}
+.card-small-icon {
+  /* border: 1px solid rgb(72, 255, 0); */
+  text-align: right;
+}
+
+.card-small-number {
+  /* border: 1px solid rgb(255, 166, 0); */
+  font-weight: bold;
+  font-size: 2.5em;
+  line-height: 0.9;
+}
+
+.card-small-percentage {
+  /* border: 1px solid rgb(0, 217, 255); */
+  text-align: right;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: var(--lime-green);
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.card-small-percentage.is-danger {
+  color: var(--bright-red);
+}
+
+.card-small-percentage span {
+  /* border: 1px solid rgb(0, 217, 255); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-small-percentage img {
+  margin-right: 5px;
+}

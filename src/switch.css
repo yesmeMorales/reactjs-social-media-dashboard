@@ -1,0 +1,48 @@
+/*Switch dark mode*/
+.dark-mode {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+
+.dark-mode-title {
+  color: var(--grayLetter);
+  font-weight: bold;
+}
+
+.checkbox {
+  display: none;
+}
+
+/*Si un elemento hermano esta checked osea el switch*/
+/*~ selector adyacente*/
+.checkbox:checked ~ .switch:before {
+  transform: translateX(40px);
+}
+
+.switch {
+  /* border: 1px solid red; */
+  height: 40px;
+  display: block;
+  border-radius: 20px;
+  background: var(--switch);
+  width: 80px;
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  /*Para no seleccionar nada más afuera usamos user-select*/
+  user-select: none;
+}
+
+.switch::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: var(--switchSpinner);
+  border-radius: 50%;
+  transform: translateX(0px);
+  transition: 0.3s;
+  /*Propiedad nueva*/
+  will-change: transform;
+}

@@ -1,0 +1,127 @@
+/* Globals */
+body {
+  /* border: 1px solid red; */
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  color: var(--baseColor);
+  background: var(--baseBackground);
+  min-height: 100vh;
+}
+
+:root {
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+
+  --facebook: hsl(203, 93%, 44%);
+  --twitter: hsl(195, 100%, 50%);
+  --instagram1: hsl(37, 97%, 70%);
+  --instagram2: hsl(329, 70%, 58%);
+  --youTube: hsl(348, 97%, 39%);
+
+  --gray: #585050;
+  --grayCard: #f0f3fa;
+  --cardTitle: #6f717e;
+  --grayLetter: #8088ad;
+  --backgroundDark: #1d2029;
+  --backgroundCardDark: #252b43;
+  --baseBackground: #f3f3f3;
+  --baseColor: #1d2029;
+  --backgroundHeader: #eeeeeeef;
+
+  --switchSpinner: white;
+  --switch: #5f616d;
+}
+
+.wrapper {
+  padding: 0 30px;
+}
+
+h2 {
+  color: var(--gray);
+}
+
+.grid {
+  display: grid;
+  grid-row-gap: 30px;
+}
+
+@media screen and (min-width: 480px) {
+  .grid {
+    /* border: 1px solid purple; */
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+  }
+  .wrapper {
+    max-width: 1440px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .grid {
+    /* border: 1px solid purple; */
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 25px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid {
+    /* border: 1px solid purple; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 25px;
+  }
+  .header-total {
+    border: none;
+  }
+
+  .header-grid {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+  }
+}
+
+.is-dark-mode {
+  --grayCard: #252b43;
+  --gray: #8088ad;
+  --baseBackground: #1d2029;
+  --grayLetter: white;
+  --cardTitle: #8088ad;
+  --baseColor: white;
+  --switchSpinner: #282943;
+  --backgroundHeader: #1d2029;
+  /*Propiedad para poner gradiente al switch de modo dark*/
+  --switch: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
+}
+
+.is-light-mode {
+  --gray: #585050;
+  --grayCard: #f0f3fa;
+  --cardTitle: #6f717e;
+  --grayLetter: #8088ad;
+  --backgroundDark: #1d2029;
+  --backgroundCardDark: #252b43;
+  --baseBackground: #f3f3f3;
+  --baseColor: #1d2029;
+  --switchSpinner: white;
+  --switch: #5f616d;
+}
+
+/*Podemos detectar un media query por javascript para saber si está
+en modo obscuro y cargarlo asi cuando recarguemos*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --grayCard: #252b43;
+    --gray: #8088ad;
+    --baseBackground: #1d2029;
+    --grayLetter: white;
+    --cardTitle: #8088ad;
+    --baseColor: white;
+    --switchSpinner: #282943;
+    /*Propiedad para poner gradiente al switch de modo dark*/
+    --switch: linear-gradient(to right, #4796d2 0%, #37ce8f 100%);
+  }
+}
