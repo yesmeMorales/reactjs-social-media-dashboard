@@ -74,8 +74,9 @@ h2 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     column-gap: 25px;
   }
+
   .header-total {
-    border: none;
+    border: none !important;
   }
 
   .header-grid {
