@@ -6,3 +6,5 @@
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+![reactjs-social-media-dashboard](./src/gifDemo/social-media-dark-gift.gif)
