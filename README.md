@@ -1,6 +1,6 @@
 # Social Media Dashboard
 
-- Try demo
+- Try demo https://yesmeMorales.github.io/reactjs-social-media-dashboard/
 
 ### `npm start`
 
